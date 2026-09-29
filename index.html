@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Sign Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+    <!-- Camera utility -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- Drawing utility -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🤟 AI Sign Language Translator</h1>
+
+    <p class="subtitle">
+        Sign Language → Text → Voice
+    </p>
+
+    <div class="main">
+
+        <!-- CAMERA -->
+        <div class="camera-card">
+
+            <h2>📷 Camera</h2>
+
+            <div class="camera-container">
+
+                <video id="video"
+                       autoplay
+                       playsinline
+                       muted>
+                </video>
+
+                <canvas id="canvas"></canvas>
+
+            </div>
+
+            <button id="startCamera">
+                ▶ Start Camera
+            </button>
+
+            <p id="cameraStatus">
+                Camera not started
+            </p>
+
+        </div>
+
+
+        <!-- RESULT -->
+        <div class="result-card">
+
+            <h2>🤖 Detection Result</h2>
+
+            <div class="result-box">
+
+                <div id="gesture">
+                    Waiting...
+                </div>
+
+                <div id="meaning">
+                    Show a hand gesture
+                </div>
+
+            </div>
+
+            <button id="speakButton">
+                🔊 Speak
+            </button>
+
+            <p id="modelStatus">
+                Loading MediaPipe...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
